@@ -3,8 +3,14 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.sass']
+  styleUrls: ['./app.component.sass'],
 })
 export class AppComponent {
-  title = 'contador';
+  contador: number = 0;
+  add() {
+    this.contador++;
+  }
+  less() {
+    this.contador--;
+  }
 }
