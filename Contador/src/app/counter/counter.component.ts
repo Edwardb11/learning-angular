@@ -10,7 +10,7 @@ export class CounterComponent {
   handleCount(value: number) {
     this.contador = value;
   }
-  handleCountLess(value: number) {
+  handleCountDiss(value: number) {
     this.contador = value;
   }
 }

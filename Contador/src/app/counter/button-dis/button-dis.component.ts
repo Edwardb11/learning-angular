@@ -8,10 +8,10 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 export class ButtonDisComponent {
   @Input()
   contador: number = 0;
-  @Output() onAdd: EventEmitter<number> = new EventEmitter();
+  @Output() onDis: EventEmitter<number> = new EventEmitter();
 
-  less() {
+  Diss() {
     this.contador--;
-    this.onAdd.emit(this.contador);
+    this.onDis.emit(this.contador);
   }
 }
