@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200&family=Merriweather&family=Rubik:wght@300&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Rubik", sans-serif;
+  text-align: center;
+}
+
+button {
+  width: 3rem;
+  border: none;
+  font-size: 3rem;
+  margin: 5px;
+}
+
+button:hover {
+  cursor: pointer;
+  color: snow;
+}

@@ -3,7 +3,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 @Component({
   selector: 'app-button-dis',
   templateUrl: './button-dis.component.html',
-  styleUrls: ['./button-dis.component.sass'],
+  styleUrls: ['./button-dis.component.css'],
 })
 export class ButtonDisComponent {
   @Input()
