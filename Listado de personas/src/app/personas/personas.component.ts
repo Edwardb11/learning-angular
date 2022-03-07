@@ -5,4 +5,6 @@ import { Component } from '@angular/core';
   templateUrl: './personas.component.html',
   styleUrls: ['./personas.component.css'],
 })
-export class PersonasComponent {}
+export class PersonasComponent {
+  deshabilitar = true;
+}
