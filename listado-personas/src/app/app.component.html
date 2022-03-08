@@ -3,9 +3,8 @@
     <h3>{{ titulo }}</h3>
   </div>
   <hr />
-  <form class="form-row">
+  <form class="row">
     <div class="form-group col-md-2">
-      <label for="nombre">Nombre</label>
       <input
         type="text"
         name="nombre"
@@ -16,7 +15,6 @@
       />
     </div>
     <div class="form-group col-md-2">
-      <label for="apellido">Apellido</label>
       <input
         type="text"
         name="apellido"
@@ -26,14 +24,14 @@
         [(ngModel)]="apellidoInput"
       />
     </div>
-    <div class="col">
+    <div class="form-group col-md-2">
       <button type="submit" class="btn btn-primary" (click)="agregarPersona()">
         Agregar
       </button>
     </div>
   </form>
 </div>
-
+<br />
 <div class="container">
   <hr />
   <div class="row">
