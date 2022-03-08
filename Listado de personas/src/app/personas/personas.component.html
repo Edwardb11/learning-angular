@@ -9,7 +9,7 @@
       >
         Agregar personas
       </button>
-      <p>{{ mensaje }}</p>
+      <p *ngIf="mostrar">{{ mensaje }} con el titulo de {{ titulo }}</p>
       <app-persona></app-persona>
       <Label>Titulo persona</Label>
       <input type="text" class="form-control" [(ngModel)]="titulo" />
