@@ -12,11 +12,7 @@
       <p>{{ mensaje }}</p>
       <app-persona></app-persona>
       <Label>Titulo persona</Label>
-      <input
-        type="text"
-        class="form-control"
-        (input)="modificarTitulo($event)"
-      />
+      <input type="text" class="form-control" [(ngModel)]="titulo" />
       {{ titulo }}
     </div>
   </div>
