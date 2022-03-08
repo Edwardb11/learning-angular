@@ -2,10 +2,22 @@
   <div class="row">
     <div class="col">
       <h1>Listado de Personas</h1>
-      <button class="btn btn-primary" [disabled]="deshabilitar">
+      <button
+        class="btn btn-primary"
+        [disabled]="deshabilitar"
+        (click)="agregarPersona()"
+      >
         Agregar personas
       </button>
+      <p>{{ mensaje }}</p>
       <app-persona></app-persona>
+      <Label>Titulo persona</Label>
+      <input
+        type="text"
+        class="form-control"
+        (input)="modificarTitulo($event)"
+      />
+      {{ titulo }}
     </div>
   </div>
 </div>
