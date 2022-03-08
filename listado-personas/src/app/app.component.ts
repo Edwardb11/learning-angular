@@ -4,12 +4,20 @@ import { Persona } from './persona.model';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Listado de personas';
+  titulo = 'Listado de Personas';
   personas: Persona[] = [
-    new Persona('Edward', 'Brito'),
-    new Persona('Frank', 'Brito'),
+    new Persona('Juan','Perez'), 
+    new Persona('Laura', 'Juarez'),
+    new Persona('Karla', 'Lara')
   ];
+  nombreInput:string = '';
+  apellidoInput:string = '';
+
+  agregarPersona(){
+    let persona1 = new Persona(this.nombreInput, this.apellidoInput);
+    this.personas.push( persona1 );
+  }
 }
