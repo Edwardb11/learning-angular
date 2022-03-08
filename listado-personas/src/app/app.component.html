@@ -3,33 +3,7 @@
     <h3>{{ titulo }}</h3>
   </div>
   <hr />
-  <form class="row">
-    <div class="form-group col-md-2">
-      <input
-        type="text"
-        name="nombre"
-        id="nombre"
-        placeholder="Nombre"
-        class="form-control"
-        [(ngModel)]="nombreInput"
-      />
-    </div>
-    <div class="form-group col-md-2">
-      <input
-        type="text"
-        name="apellido"
-        id="apellido"
-        placeholder="Apellido"
-        class="form-control"
-        [(ngModel)]="apellidoInput"
-      />
-    </div>
-    <div class="form-group col-md-2">
-      <button type="submit" class="btn btn-primary" (click)="agregarPersona()">
-        Agregar
-      </button>
-    </div>
-  </form>
+  <app-formulario (personaCreada)="personaAgregada($event)"></app-formulario>
   <br />
   <hr />
 </div>
