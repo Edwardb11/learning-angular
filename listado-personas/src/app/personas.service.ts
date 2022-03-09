@@ -1,6 +1,6 @@
 import { Persona } from './persona.model';
 import { LoggingService } from './LoggingService.service';
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 // para inyectar un servicio dentro de un servicio
 @Injectable()
 export class PersonasService {
@@ -9,6 +9,7 @@ export class PersonasService {
     new Persona('Laura', 'Juarez'),
     new Persona('Karla', 'Lara'),
   ];
+  saludar = new EventEmitter<number>();
   constructor(private LoggingService: LoggingService) {}
   AgregarPersona(persona: Persona) {
     this.LoggingService.EnviaMensaheAConsola(
