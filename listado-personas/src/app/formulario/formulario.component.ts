@@ -33,13 +33,13 @@ export class FormularioComponent implements OnInit {
       this.nombreInput.nativeElement.value,
       this.apellidoInput.nativeElement.value
     );
-    this.LoggingService.EnviaMensaheAConsola(
-      'Enviamos una persona' +
-        'Nombre: ' +
-        persona1.nombre +
-        ' Apellido: ' +
-        persona1.apellido
-    );
+    // this.LoggingService.EnviaMensaheAConsola(
+    //   'Enviamos una persona' +
+    //     'Nombre: ' +
+    //     persona1.nombre +
+    //     ' Apellido: ' +
+    //     persona1.apellido
+    // );
     // this.personas.push(persona1);
     // ahora podemos propagar informacion al componente padre
     // this.personaCreada.emit(persona1);

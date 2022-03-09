@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Persona } from './persona.model';
-import { LoggingService } from './LoggingService.service';
 import { PersonasService } from './personas.service';
 
 @Component({
@@ -11,10 +10,7 @@ import { PersonasService } from './personas.service';
 export class AppComponent implements OnInit {
   titulo = 'Listado de Personas';
   personas: Persona[] = [];
-  constructor(
-    private LoggingService: LoggingService,
-    private PersonasService: PersonasService
-  ) {}
+  constructor(private PersonasService: PersonasService) {}
   // inicializar en esta interfaz
   ngOnInit(): void {
     this.personas = this.PersonasService.personas;
