@@ -12,7 +12,7 @@ export class PersonasService {
   saludar = new EventEmitter<number>();
   constructor(private LoggingService: LoggingService) {}
   AgregarPersona(persona: Persona) {
-    this.LoggingService.EnviaMensaheAConsola(
+    this.LoggingService.enviaMensajeAConsola(
       'Enviamos una persona' + 'Nombre: ' + persona.nombre
     );
     this.personas.push(persona);
