@@ -16,6 +16,9 @@ export class AppComponent {
   agregarOEditar() {
     // Para agregar un ID
     this.selectedEmpleado.id = this.EmpleadoArray.length + 1;
+    // Para agregar el nombre uy pais que apuntan en sus respectivos input
     this.EmpleadoArray.push(this.selectedEmpleado);
+    // Para limpiar el formulario
+    this.selectedEmpleado = new Empleados();
   }
 }
