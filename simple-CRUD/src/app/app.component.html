@@ -10,6 +10,7 @@
           *ngFor="let empleados of EmpleadoArray"
           class="list-group-item list-group-item-action"
           (click)="OpenEditar(empleados)"
+          [class.active]="empleados == selectedEmpleado"
         >
           <span class="badge bg-primary">{{ empleados.id }}</span>
           {{ empleados.nombre }} - {{ empleados.pais }}

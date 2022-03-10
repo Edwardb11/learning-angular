@@ -17,11 +17,15 @@ export class AppComponent {
     this.selectedEmpleado = empleados;
   }
   agregarOEditar() {
-    // Para agregar un ID
-    this.selectedEmpleado.id = this.EmpleadoArray.length + 1;
-    // Para agregar el nombre uy pais que apuntan en sus respectivos input
-    this.EmpleadoArray.push(this.selectedEmpleado);
-    // Para limpiar el formulario
+    // si es igual a 0 significa que no hay nada y creara uno
+    if (this.selectedEmpleado.id === 0) {
+      // Para agregar un ID
+      this.selectedEmpleado.id = this.EmpleadoArray.length + 1;
+      // Para agregar el nombre uy pais que apuntan en sus respectivos input
+      this.EmpleadoArray.push(this.selectedEmpleado);
+      // Para limpiar el formulario
+      this.selectedEmpleado = new Empleados();
+    }
     this.selectedEmpleado = new Empleados();
   }
 }
