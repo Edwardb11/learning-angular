@@ -40,6 +40,14 @@
           <button (click)="agregarOEditar()" class="btn btn-primary">
             Agregar
           </button>
+          <!-- Solo se mostrara el boton cuando se seleciono un empleado por eso la comparacion con 0 -->
+          <button
+            *ngIf="selectedEmpleado.id != 0"
+            class="btn btn-danger"
+            (click)="Eliminar()"
+          >
+            Eliminar
+          </button>
         </div>
       </div>
     </div>
