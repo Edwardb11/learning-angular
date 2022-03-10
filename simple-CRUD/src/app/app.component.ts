@@ -13,6 +13,9 @@ export class AppComponent {
     { id: 3, nombre: 'Joan Gabriel', pais: 'USA' },
   ];
   selectedEmpleado: Empleados = new Empleados();
+  OpenEditar(empleados: Empleados) {
+    this.selectedEmpleado = empleados;
+  }
   agregarOEditar() {
     // Para agregar un ID
     this.selectedEmpleado.id = this.EmpleadoArray.length + 1;
