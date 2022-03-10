@@ -29,11 +29,13 @@ export class AppComponent {
     this.selectedEmpleado = new Empleados();
   }
   Eliminar() {
-    // funcion filter para filtrar los que son diferentes al selecionado
-    this.EmpleadoArray = this.EmpleadoArray.filter(
-      (elemento) => elemento != this.selectedEmpleado
-    );
-    // Limpiar
-    this.selectedEmpleado = new Empleados();
+    if (confirm('Estas seguro de eliminarlo')) {
+      // funcion filter para filtrar los que son diferentes al selecionado
+      this.EmpleadoArray = this.EmpleadoArray.filter(
+        (elemento) => elemento != this.selectedEmpleado
+      );
+      // Limpiar
+      this.selectedEmpleado = new Empleados();
+    }
   }
 }
