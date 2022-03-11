@@ -7,6 +7,8 @@ import { IngresoComponent } from './ingreso/ingreso.component';
 import { CabeceroComponent } from './cabecero/cabecero.component';
 import { EgresoComponent } from './egreso/egreso.component';
 import { FormularioComponent } from './formulario/formulario.component';
+import { EgresoServicio } from './egreso/egreso.service';
+import { IngresoServicio } from './ingreso/ingreso.service';
 
 @NgModule({
   declarations: [
@@ -14,13 +16,10 @@ import { FormularioComponent } from './formulario/formulario.component';
     IngresoComponent,
     CabeceroComponent,
     EgresoComponent,
-    FormularioComponent
+    FormularioComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  imports: [BrowserModule, AppRoutingModule],
+  providers: [IngresoServicio, EgresoServicio],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
