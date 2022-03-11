@@ -1,0 +1,7 @@
+import { Egreso } from './egreso.model';
+export class EgresoServicio {
+  egresos: Egreso[] = [
+    new Egreso('Renta departamento', 900),
+    new Egreso('Ropa', 500),
+  ];
+}
