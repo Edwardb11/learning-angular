@@ -2,15 +2,13 @@
   <button style="cursor: pointer" (click)="agregar()">+</button>
 </div>
 
-<div class="box">  
-    <app-persona
-      *ngFor="let personaElemento of personas; let i = index"
-      [persona]="personaElemento"
-      [indice]="i"
-    >
-    </app-persona>
-  </div>
-  
-  <div class="box">
-    <app-formulario></app-formulario>
-  </div>
+<div class="box">
+  <app-persona
+    *ngFor="let personaElemento of personas; let i = index"
+    [persona]="personaElemento"
+    [indice]="i"
+  >
+  </app-persona>
+</div>
+
+<router-outlet></router-outlet>
