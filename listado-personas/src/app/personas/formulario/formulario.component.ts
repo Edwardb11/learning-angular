@@ -1,4 +1,5 @@
 import { Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { LoggingService } from '../../LoggingService.service';
 import { Persona } from '../../persona.model';
 import { PersonasService } from '../../persona.service';
@@ -12,12 +13,13 @@ export class FormularioComponent  {
   nombreInput:string;
   apellidoInput:string;  
 
-  constructor(private loggingService:LoggingService,
-    private personaService:PersonasService){}
+  constructor(private personaService:PersonasService,
+              private router: Router){}
 
-  agregarPersona(){
+  guardarPersona(){
     let persona1 = new Persona(this.nombreInput, this.apellidoInput);
     this.personaService.agregarPersona(persona1);
+    this.router.navigate(['personas']);
   }
 
 }
