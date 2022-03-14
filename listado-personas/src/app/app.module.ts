@@ -10,21 +10,18 @@ import { PersonasService } from './persona.service';
 import { AppRoutingModule } from './app-routing.module';
 import { PersonasComponent } from './personas/personas.component';
 import { ErrorComponent } from './error/error.component';
+import { DataService } from './data.service';
 
 @NgModule({
-  declarations: [ 
+  declarations: [
     AppComponent,
     PersonaComponent,
     FormularioComponent,
     PersonasComponent,
-    ErrorComponent
+    ErrorComponent,
   ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    AppRoutingModule
-  ],
-  providers: [LoggingService, PersonasService],
-  bootstrap: [AppComponent]
+  imports: [BrowserModule, FormsModule, AppRoutingModule],
+  providers: [LoggingService, PersonasService, DataService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
