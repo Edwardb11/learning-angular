@@ -1,4 +1,9 @@
 <div class="item">
-  <input type="checkbox" />
-  <p>{{ indice + 1 }}: {{ persona.nombre }} {{ persona.apellido }}</p>
+  <ul>
+    <li>
+      <a [routerLink]="['/persona', indice]">
+        <p>{{ persona.nombre }} {{ persona.apellido }}</p>
+      </a>
+    </li>
+  </ul>
 </div>
