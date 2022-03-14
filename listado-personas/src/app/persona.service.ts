@@ -1,6 +1,7 @@
 import { EventEmitter, Injectable } from '@angular/core';
 import { LoggingService } from './LoggingService.service';
 import { Persona } from './persona.model';
+import { DataService } from './data.service';
 
 @Injectable()
 export class PersonasService {
@@ -11,13 +12,18 @@ export class PersonasService {
 
   saludar = new EventEmitter<number>();
 
-  constructor(private loggingService: LoggingService) {}
+  constructor(
+    private loggingService: LoggingService,
+    private DataService: DataService
+  ) {}
 
   agregarPersona(persona: Persona) {
     this.loggingService.enviaMensajeAConsola(
       'agregamos persona:' + persona.nombre
     );
     this.personas.push(persona);
+    // Para guardar en el servicio de data service
+    this.DataService.guardarPersonas(this.personas);
   }
 
   encontrarPersona(index: number) {
