@@ -1,26 +1,57 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Persona } from './persona.model';
+import { PersonasService } from './personas.service';
+import { Subscriber } from 'rxjs';
 
 @Injectable()
 export class DataService {
-  // inicializando el servicio de httpclient
-  constructor(private http: HttpClient) {}
-  // Guardar personas
+  constructor(private httpClient: HttpClient) {}
+
+  cargarPersonas() {
+    return this.httpClient.get(
+      'https://listado-personas-3624c-default-rtdb.firebaseio.com/datos.json'
+    );
+  }
+
+  //Guarda todo el arreglo de personas
   guardarPersonas(personas: Persona[]) {
-    this.http
-      .post(
+    this.httpClient
+      .put(
         'https://listado-personas-3624c-default-rtdb.firebaseio.com/datos.json',
         personas
       )
-      // Subscribirno para obtener una respuesta del metodo post
       .subscribe(
         (response) => {
-          console.log('Resultado de guardar personas' + response);
+          console.log('resultado guardar Personas: ' + response);
         },
-        (error) => {
-          console.log('Error al guardar persona ' + error);
-        }
+        (error) => console.log('Error en guardar Personas: ' + error)
       );
+  }
+
+  modificarPersona(index: number, persona: Persona) {
+    let url: string;
+    url =
+      'https://listado-personas.firebaseio.com' + '/datos/' + index + '.json';
+    console.log('url de modificarPersona:' + url);
+    this.httpClient.put(url, persona).subscribe(
+      (response) => {
+        console.log('resultado modificar Persona: ' + response);
+      },
+      (error) => console.log('Error en modificar Persona: ' + error)
+    );
+  }
+
+  eliminarPersona(index: number) {
+    let url: string;
+    url =
+      'https://listado-personas.firebaseio.com' + '/datos/' + index + '.json';
+    console.log('url de eliminarPersona:' + url);
+    this.httpClient.delete(url).subscribe(
+      (response) => {
+        console.log('resultado eliminar Persona: ' + response);
+      },
+      (error) => console.log('Error en eliminar Persona: ' + error)
+    );
   }
 }
