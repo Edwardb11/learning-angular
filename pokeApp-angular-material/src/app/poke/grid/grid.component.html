@@ -5,6 +5,10 @@
   </mat-grid-tile>
 </mat-grid-list>
 <div class="btns">
-  <button mat-fab color="primary"><mat-icon>chevron_left</mat-icon></button>
-  <button mat-fab color="warn"><mat-icon>arrow_forward</mat-icon></button>
+  <button mat-fab color="primary" [disabled]="page == 0" (click)="prevPage()">
+    <mat-icon>chevron_left</mat-icon>
+  </button>
+  <button mat-fab color="warn" (click)="nextPage()">
+    <mat-icon>arrow_forward</mat-icon>
+  </button>
 </div>
