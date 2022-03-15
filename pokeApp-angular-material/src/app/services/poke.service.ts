@@ -15,7 +15,7 @@ export class PokeService {
       // paso de parametros a los limites y offset que tenia en este caso solo offset
       params: {
         offset: page,
-        limit: 10,
+        limit: 8,
       },
     });
   }
