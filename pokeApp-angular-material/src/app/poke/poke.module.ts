@@ -7,6 +7,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
+import { MatButtonModule } from '@angular/material/button';
 @NgModule({
   declarations: [GridComponent, NavbarComponent, CardComponent],
   imports: [
@@ -15,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatGridListModule,
     MatCardModule,
     HttpClientModule,
+    MatButtonModule,
   ],
   exports: [GridComponent],
 })

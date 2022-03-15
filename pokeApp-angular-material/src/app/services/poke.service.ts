@@ -5,14 +5,21 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class PokeService {
+  private baseUrl: string = 'https://pokeapi.co/api/v2/pokemon/';
   // Inyectando el servicio de http client para hacer eso del mismo
   constructor(private http: HttpClient) {}
 
   // metodo para obtener informacion del endpoint
-  getList() {
-    return this.http.get('https://pokeapi.co/api/v2/pokemon?limit=20&offset=0');
+  getList(page: number = 0) {
+    return this.http.get(`${this.baseUrl}`, {
+      // paso de parametros a los limites y offset que tenia en este caso solo offset
+      params: {
+        offset: page,
+        limit: 10,
+      },
+    });
   }
   getPokeData(name: string) {
-    return this.http.get(`https://pokeapi.co/api/v2/pokemon/${name}`);
+    return this.http.get(`${this.baseUrl}${name}`);
   }
 }
