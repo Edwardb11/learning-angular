@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Persona } from './persona.model';
-import { PersonasService } from './personas.service';
-import { Subscriber } from 'rxjs';
 
 @Injectable()
 export class DataService {
@@ -32,7 +30,10 @@ export class DataService {
   modificarPersona(index: number, persona: Persona) {
     let url: string;
     url =
-      'https://listado-personas.firebaseio.com' + '/datos/' + index + '.json';
+      'https://listado-personas-3624c-default-rtdb.firebaseio.com' +
+      '/datos/' +
+      index +
+      '.json';
     console.log('url de modificarPersona:' + url);
     this.httpClient.put(url, persona).subscribe(
       (response) => {
@@ -45,7 +46,10 @@ export class DataService {
   eliminarPersona(index: number) {
     let url: string;
     url =
-      'https://listado-personas.firebaseio.com' + '/datos/' + index + '.json';
+      'https://listado-personas-3624c-default-rtdb.firebaseio.com' +
+      '/datos/' +
+      index +
+      '.json';
     console.log('url de eliminarPersona:' + url);
     this.httpClient.delete(url).subscribe(
       (response) => {

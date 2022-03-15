@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Persona } from '../persona.model';
+import { LoggingService } from '../LoggingService.service';
 import { PersonasService } from '../personas.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-personas',
@@ -12,17 +14,22 @@ export class PersonasComponent implements OnInit {
   personas: Persona[] = [];
 
   constructor(
+    private loggingService: LoggingService,
     private personasService: PersonasService,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute
   ) {}
 
-  ngOnInit() {
-    this.personasService.obtenerPersonas().subscribe((personas: any) => {
-      //Cargamos los datos de la base de datos al arreglo de personas local
-      this.personas = personas;
-      this.personasService.setPersonas(this.personas);
-      console.log('obtener personas suscriber:' + this.personas);
-    });
+  ngOnInit(): void {
+    this.personasService
+      .obtenerPersonas()
+
+      .subscribe((personas1: any) => {
+        //Cargamos los datos de la base de datos al arreglo de personas local
+        this.personas = personas1;
+        this.personasService.setPersonas(this.personas);
+        console.log('obtener personas suscriber:' + personas1);
+      });
   }
 
   irAgregar() {
