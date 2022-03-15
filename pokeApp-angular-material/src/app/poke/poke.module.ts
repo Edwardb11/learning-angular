@@ -6,10 +6,16 @@ import { CardComponent } from './card/card.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
-
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [GridComponent, NavbarComponent, CardComponent],
-  imports: [CommonModule, MatToolbarModule, MatGridListModule, MatCardModule],
+  imports: [
+    CommonModule,
+    MatToolbarModule,
+    MatGridListModule,
+    MatCardModule,
+    HttpClientModule,
+  ],
   exports: [GridComponent],
 })
 export class PokeModule {}
