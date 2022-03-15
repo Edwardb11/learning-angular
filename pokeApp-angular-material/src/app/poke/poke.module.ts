@@ -8,6 +8,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
 import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+
 @NgModule({
   declarations: [GridComponent, NavbarComponent, CardComponent],
   imports: [
@@ -17,6 +19,7 @@ import { MatButtonModule } from '@angular/material/button';
     MatCardModule,
     HttpClientModule,
     MatButtonModule,
+    MatIconModule,
   ],
   exports: [GridComponent],
 })
