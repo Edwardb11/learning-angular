@@ -14,6 +14,7 @@ export class GridComponent {
     // llamamos al metodo que creamos
     //  este peticion nos retorna un observable rjx y nos subscribimos y nos permite pasarle una funcion flecha para la respuesta
     PokeService.getList().subscribe((res: any) => {
+      this.pokeList = res.results;
       console.log(res);
     });
   }
