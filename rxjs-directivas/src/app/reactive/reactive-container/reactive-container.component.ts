@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { observable, Observable, observeOn } from 'rxjs';
 
 @Component({
   selector: 'app-reactive-container',
@@ -7,13 +7,33 @@ import { Observable } from 'rxjs';
   styleUrls: ['./reactive-container.component.css'],
 })
 export class ReactiveContainerComponent implements OnInit {
-  numero = 0;
-  miObservable = new Observable<number>(() => {
-    setInterval(() => {
-      this.numero++;
-    }, 3000);
-  });
-  constructor() {}
+  constructor() {
+    let numero = 0;
+    const miObservable = new Observable<number>((observer) => {
+      setInterval(() => {
+        numero++;
+        observer.next(numero);
+        observer.complete();
+        if (numero == 3) {
+          observer.error('Numero error');
+        }
+      }, 3000);
+    });
+
+    // llamar al observable
+    miObservable.subscribe(
+      (res) => {
+        console.log(res);
+      },
+      (error) => {
+        console.log(error);
+      },
+      // completado
+      () => {
+        console.log('Observable completado');
+      }
+    );
+  }
 
   ngOnInit(): void {}
 }
