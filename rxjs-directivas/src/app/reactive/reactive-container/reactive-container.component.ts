@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, interval, observable, filter } from 'rxjs';
+import { Observable, interval, filter, take } from 'rxjs';
 
 @Component({
   selector: 'app-reactive-container',
@@ -53,7 +53,12 @@ export class ReactiveContainerComponent implements OnInit {
 
   ngOnInit(): void {
     this.miIntervalo
-      .pipe(filter((value) => value % 2 == 0))
+      .pipe(
+        // filtrar
+        filter((value) => value % 2 == 0),
+        // se trata de decir cuantas veces se ejecutara el filtro\
+        take(4)
+      )
       .subscribe((value) => console.log(value));
   }
 }
