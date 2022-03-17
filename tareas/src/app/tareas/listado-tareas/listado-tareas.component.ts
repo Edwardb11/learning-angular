@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { tareasServices } from './../services/tarea.service';
 
 @Component({
   selector: 'app-listado-tareas',
@@ -6,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./listado-tareas.component.css'],
 })
 export class ListadoTareasComponent {
-  tareas: Array<string> = ['Barrer', 'Trapear', 'Cocinar', 'Leer'];
+  constructor(private tareasServices: tareasServices) {}
+  get tareas() {
+    return this.tareasServices.tareas;
+  }
 }
