@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, interval, filter, take } from 'rxjs';
+import { Observable, interval, filter, take, map } from 'rxjs';
 
 @Component({
   selector: 'app-reactive-container',
@@ -9,7 +9,14 @@ import { Observable, interval, filter, take } from 'rxjs';
 export class ReactiveContainerComponent implements OnInit {
   // Interval integtrado de RXJS
 
-  miIntervalo: Observable<number> = interval(3000);
+  miIntervalo: Observable<number> = interval(100).pipe(
+    // funcion para tranformar el valor inicial
+    map((value) => value + 1),
+    // filtrar
+    filter((value) => value % 2 == 0),
+    // se trata de decir cuantas veces se ejecutara el filtro\
+    take(5)
+  );
 
   constructor() {
     // let numero = 0;
@@ -52,13 +59,9 @@ export class ReactiveContainerComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.miIntervalo
-      .pipe(
-        // filtrar
-        filter((value) => value % 2 == 0),
-        // se trata de decir cuantas veces se ejecutara el filtro\
-        take(4)
-      )
-      .subscribe((value) => console.log(value));
+    this.miIntervalo.subscribe({
+      next: (value) => console.log(value),
+      complete: () => console.log('Estos son los primeros 5 numeros pares'),
+    });
   }
 }
