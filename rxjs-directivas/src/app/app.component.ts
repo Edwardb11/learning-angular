@@ -7,6 +7,10 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit, OnDestroy {
   title = 'rxjs-directivas';
+  visible = true;
+  setVisible() {
+    this.visible = !this.visible;
+  }
   ngOnInit() {
     this.title = 'Componente creado';
   }

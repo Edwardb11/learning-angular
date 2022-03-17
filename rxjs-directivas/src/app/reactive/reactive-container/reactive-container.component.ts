@@ -1,12 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable, interval, filter, take, map } from 'rxjs';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Observable, interval, filter, take, map, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-reactive-container',
   templateUrl: './reactive-container.component.html',
   styleUrls: ['./reactive-container.component.css'],
 })
-export class ReactiveContainerComponent implements OnInit {
+export class ReactiveContainerComponent implements OnInit, OnDestroy {
   // Interval integtrado de RXJS
 
   miIntervalo: Observable<number> = interval(100).pipe(
@@ -17,6 +17,7 @@ export class ReactiveContainerComponent implements OnInit {
     // se trata de decir cuantas veces se ejecutara el filtro\
     take(5)
   );
+  miSubscription: Subscription | null = null;
 
   constructor() {
     // let numero = 0;
@@ -59,9 +60,16 @@ export class ReactiveContainerComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.miIntervalo.subscribe({
+    // asignar la subscripcion a mi variable
+    this.miSubscription = this.miIntervalo.subscribe({
       next: (value) => console.log(value),
       complete: () => console.log('Estos son los primeros 5 numeros pares'),
     });
+  }
+  // destruir componentes
+  ngOnDestroy() {
+    // utilizar referencia de la subscricion
+    this.miSubscription!.unsubscribe();
+    console.log('Componente destruido');
   }
 }

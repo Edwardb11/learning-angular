@@ -1,3 +1,4 @@
 <h1>RxJS</h1>
 <hr />
-<app-reactive-container></app-reactive-container>
+<app-reactive-container *ngIf="visible"></app-reactive-container>
+<button (click)="setVisible()">Toggle</button>
