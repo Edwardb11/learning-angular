@@ -1,0 +1,22 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Actividad</th>
+      <th><abbr title="Played">Completar</abbr></th>
+      <th><abbr title="Won">Eliminar</abbr></th>
+      X
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let tarea of tareas; index as i">
+      <th>{{ i + 1 }}</th>
+      <td>
+        <b>{{ tarea }}</b>
+      </td>
+      <td><button class="button is-link">Completar</button></td>
+      <td><button class="button is-danger">Eliminar</button></td>
+    </tr>
+  </tbody>
+</table>
