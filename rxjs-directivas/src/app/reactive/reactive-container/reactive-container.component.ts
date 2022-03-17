@@ -19,20 +19,33 @@ export class ReactiveContainerComponent implements OnInit {
         }
       }, 3000);
     });
-
+    // Legacy
     // llamar al observable
-    miObservable.subscribe(
-      (res) => {
+    // miObservable.subscribe(
+    //   (res) => {
+    //     console.log(res);
+    //   },
+    //   (error) => {
+    //     console.log(error);
+    //   },
+    //   // completado
+    //   () => {
+    //     console.log('Observable completado');
+    //   }
+    // );
+
+    // Forma moderna
+    miObservable.subscribe({
+      next: (res) => {
         console.log(res);
       },
-      (error) => {
+      error: (error) => {
         console.log(error);
       },
-      // completado
-      () => {
+      complete: () => {
         console.log('Observable completado');
-      }
-    );
+      },
+    });
   }
 
   ngOnInit(): void {}
