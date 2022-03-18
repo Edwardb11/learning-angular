@@ -1,35 +1,69 @@
-<p>Works</p>
-<!-- <form class="form-group container" autocomplete="off">
+<form class="form-group container" autocomplete="off">
   <div>
-    <label for="proyecto">Proyecto</label>
+    <label for="proyectoR">Proyecto</label>
     <input
       class="form-control"
       type="text"
-      id="proyecto"
+      id="proyectoR"
       placeholder="Nombre del proyecto"
     />
   </div>
   <div>
-    <label for="Horas">Horas</label>
+    <label for="HorasR">Horas</label>
     <input
       class="form-control"
       type="number"
-      id="Horas"
+      id="HorasR"
       placeholder="Horas para completar"
     />
   </div>
   <div>
-    <label for="Tecnologias">Tecnología </label>
-    <input
-      class="form-control"
-      type="text"
-      id="Tecnologias"
-      placeholder="Nombre de la tecnología "
-    />
+    <label for="TecnologiasR">Tecnologías </label>
+    <div class="row">
+      <div class="col-8">
+        <input
+          autocomplete="off"
+          class="form-control"
+          type="text"
+          id="TecnologiasR"
+          placeholder="Nombre de la tecnología "
+        />
+      </div>
+
+      <div class="col-4">
+        <button class="btn btn-success" type="button">Agregar</button>
+      </div>
+      <div class="col-12 my-2">
+        <ul class="list-group list-group-horizontal">
+          <li *ngFor="let tecnologia of []" class="list-group-item">
+            {{ tecnologia }}
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
+
   <div>
     <button class="btn btn-warning mt-2 w-100" type="submit">
       Agregar proyecto
     </button>
   </div>
-</form> -->
+</form>
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Proyectos</th>
+        <th scope="col">Horas</th>
+        <th scope="col">Tecnologias</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- <tr *ngFor="let proyecto of proyectos">
+        <td>{{ proyecto.proyecto }}</td>
+        <td>{{ proyecto.horas }}</td>
+        <td>{{ proyecto.tecnologias }}</td>
+      </tr> -->
+    </tbody>
+  </table>
+</div>
