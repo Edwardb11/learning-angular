@@ -1,15 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { tareasServices } from './../services/tarea.service';
 
 @Component({
   selector: 'app-subtitulo',
   templateUrl: './subtitulo.component.html',
-  styleUrls: ['./subtitulo.component.css']
 })
-export class SubtituloComponent implements OnInit {
+export class SubtituloComponent {
+  constructor(private tareasServices: tareasServices) {}
 
-  constructor() { }
-
-  ngOnInit(): void {
+  get tareas() {
+    return this.tareasServices.tareas.length;
   }
-
 }

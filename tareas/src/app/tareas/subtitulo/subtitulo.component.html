@@ -1,1 +1,5 @@
 <h2 class="subtitle">Listado de tareas</h2>
+<div *ngIf="tareas" class="notification is-link">
+  Numero de tareas: {{ tareas }}
+</div>
+<div *ngIf="!tareas" class="notification is-danger">NO HAY TAREAS</div>
