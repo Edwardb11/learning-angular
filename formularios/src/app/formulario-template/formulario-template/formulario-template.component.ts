@@ -11,7 +11,9 @@ export class FormularioTemplateComponent implements OnInit {
   @ViewChild('miFormulario')
   miFormulario!: NgForm;
   tecnologias: Array<string> = [];
+  proyectos: any[] = [];
   // Two-way binding
+
   initialState = {
     proyecto: '',
     horas: 0,
@@ -20,7 +22,18 @@ export class FormularioTemplateComponent implements OnInit {
   constructor() {}
   ngOnInit(): void {}
   agregar() {
-    console.log(this.miFormulario.value);
+    if (this.miFormulario.invalid) {
+      return;
+    }
+    this.proyectos.push({
+      proyecto: this.miFormulario.controls['proyecto'].value,
+      horas: this.miFormulario.controls['horas'].value,
+      tecnologias: this.tecnologias,
+    });
+
+    this.miFormulario.resetForm();
+    this.tecnologias = [];
+    console.log('aa');
   }
   agregarTec() {
     if (this.miFormulario.controls['tecnologia'].invalid) {

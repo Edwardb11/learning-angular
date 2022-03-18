@@ -53,15 +53,22 @@
           placeholder="Nombre de la tecnología "
           [(ngModel)]="initialState.tecnologia"
           name="tecnologia"
-          required
           minlength="3"
           maxlength="15"
         />
       </div>
+
       <div class="col-4">
         <button class="btn btn-success" type="button" (click)="agregarTec()">
           Agregar
         </button>
+      </div>
+      <div class="col-12 my-2">
+        <ul class="list-group list-group-horizontal">
+          <li *ngFor="let tecnologia of tecnologias" class="list-group-item">
+            {{ tecnologia }}
+          </li>
+        </ul>
       </div>
     </div>
   </div>
@@ -71,9 +78,21 @@
     </button>
   </div>
 </form>
-<pre>
-  Proyecto {{ initialState | json }}
-  Valido {{ miFormulario.valid }}
-  Errores {{ miFormulario.errors | json }}
-  Errores {{ miFormulario.controls["horas"]?.errors | json }}
-</pre>
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Proyectos</th>
+        <th scope="col">Horas</th>
+        <th scope="col">Tecnologias</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let proyecto of proyectos">
+        <td>{{ proyecto.proyecto }}</td>
+        <td>{{ proyecto.horas }}</td>
+        <td>{{ proyecto.tecnologias }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
