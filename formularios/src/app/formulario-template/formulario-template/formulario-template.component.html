@@ -14,6 +14,7 @@
       placeholder="Nombre del proyecto"
       ngModel
       name="proyecto"
+      required=""
     />
   </div>
   <div>
@@ -48,3 +49,8 @@
     </button>
   </div>
 </form>
+<pre>
+  Proyecto {{ miFormulario.value | json }}
+  Valido {{ miFormulario.valid }}
+  Valido {{ miFormulario.errors | json }}
+</pre>
