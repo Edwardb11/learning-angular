@@ -1,4 +1,9 @@
-<form class="form-group container" autocomplete="off">
+<form
+  class="form-group container"
+  autocomplete="off"
+  (ngSubmit)="agregar()"
+  #miFormulario="ngForm"
+>
   <div>
     <label for="proyecto">Proyecto</label>
     <input
@@ -7,6 +12,8 @@
       type="text"
       id="proyecto"
       placeholder="Nombre del proyecto"
+      ngModel
+      name="proyecto"
     />
   </div>
   <div>
