@@ -28,5 +28,9 @@ export class FormularioTemplateComponent implements OnInit {
     }
     this.tecnologias.push(this.miFormulario.controls['tecnologia'].value);
     console.log(this.tecnologias);
+    this.miFormulario.resetForm({
+      ...this.miFormulario.value,
+      tecnologia: '',
+    });
   }
 }
