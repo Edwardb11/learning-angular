@@ -15,4 +15,7 @@ export class ListadoTareasComponent {
   delete(Tarea: Tarea) {
     this.tareasServices.deleteTarea(Tarea.tarea);
   }
+  complete(tarea: Tarea) {
+    this.tareasServices.completaTarea(tarea.tarea);
+  }
 }

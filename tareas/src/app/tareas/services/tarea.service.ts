@@ -12,4 +12,10 @@ export class tareasServices {
   deleteTarea(nombreTarea: string) {
     this.tareas = this.tareas.filter((tarea) => tarea.tarea !== nombreTarea);
   }
+  completaTarea(nombreTarea: string) {
+    const tarea: Tarea = this.tareas.find(
+      (tarea) => tarea.tarea === nombreTarea
+    )!;
+    tarea.completada = !tarea.completada;
+  }
 }
