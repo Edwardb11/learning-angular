@@ -50,10 +50,14 @@
           type="text"
           id="Tecnologias"
           placeholder="Nombre de la tecnología "
+          ngModel
+          name="tecnologia"
         />
       </div>
       <div class="col-12 col-md-4">
-        <button class="btn btn-success">Agregar</button>
+        <button class="btn btn-success" type="button" (click)="agregarTec()">
+          Agregar
+        </button>
       </div>
     </div>
   </div>

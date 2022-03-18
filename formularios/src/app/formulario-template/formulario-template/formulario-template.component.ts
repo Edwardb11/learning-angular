@@ -10,10 +10,15 @@ export class FormularioTemplateComponent implements OnInit {
   //  decirador que me pide un selector que me pide una referencia local
   @ViewChild('miFormulario')
   miFormulario!: NgForm;
+  tecnologias: Array<string> = [];
   constructor() {}
 
   ngOnInit(): void {}
   agregar() {
     console.log(this.miFormulario.value);
+  }
+  agregarTec() {
+    this.tecnologias.push(this.miFormulario.controls['tecnologia'].value);
+    console.log(this.tecnologias);
   }
 }
