@@ -2,6 +2,7 @@
   <div>
     <label for="proyecto">Proyecto</label>
     <input
+      autocomplete="off"
       class="form-control"
       type="text"
       id="proyecto"
@@ -18,13 +19,21 @@
     />
   </div>
   <div>
-    <label for="Tecnologias">Tecnologias</label>
-    <input
-      class="form-control"
-      type="text"
-      id="Tecnologias"
-      placeholder="Nombre de la tecnologia"
-    />
+    <label for="Tecnologias">Tecnologías </label>
+    <div class="row">
+      <div class="col-12 col-md-8">
+        <input
+          autocomplete="off"
+          class="form-control"
+          type="text"
+          id="Tecnologias"
+          placeholder="Nombre de la tecnología "
+        />
+      </div>
+      <div class="col-12 col-md-4">
+        <button class="btn btn-success">Agregar</button>
+      </div>
+    </div>
   </div>
   <div>
     <button class="btn btn-warning mt-2 w-100" type="submit">
