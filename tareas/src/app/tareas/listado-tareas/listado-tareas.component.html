@@ -13,11 +13,13 @@
     <tr *ngFor="let tarea of tareas; index as i">
       <th>{{ i + 1 }}</th>
       <td>
-        <b>{{ tarea }}</b>
+        <b>{{ tarea.tarea }}</b>
       </td>
       <td><button class="button is-link">Completar</button></td>
       <td>
-        <button class="button is-danger">Eliminar</button>
+        <button class="button is-danger" (click)="delete(tarea)">
+          Eliminar
+        </button>
       </td>
     </tr>
   </tbody>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Tarea } from '../interface/tarea.interface';
 import { tareasServices } from './../services/tarea.service';
 
 @Component({
@@ -10,5 +11,8 @@ export class ListadoTareasComponent {
   constructor(private tareasServices: tareasServices) {}
   get tareas() {
     return this.tareasServices.tareas;
+  }
+  delete(Tarea: Tarea) {
+    this.tareasServices.deleteTarea(Tarea.tarea);
   }
 }

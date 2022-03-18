@@ -9,7 +9,7 @@ export class tareasServices {
     { tarea: 'Cocinar', completada: true },
     { tarea: 'Leer', completada: false },
   ];
-  deleteTarea() {
-    this.tareas.pop();
+  deleteTarea(nombreTarea: string) {
+    this.tareas = this.tareas.filter((tarea) => tarea.tarea !== nombreTarea);
   }
 }
