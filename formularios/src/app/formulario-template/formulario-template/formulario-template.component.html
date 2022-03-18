@@ -14,7 +14,9 @@
       placeholder="Nombre del proyecto"
       ngModel
       name="proyecto"
-      required=""
+      minlength="3"
+      maxlength="15"
+      required
     />
     <div
       *ngIf="miFormulario.invalid && miFormulario.touched"
@@ -32,6 +34,10 @@
       type="number"
       id="Horas"
       placeholder="Horas para completar"
+      name="horas"
+      required
+      min="0"
+      max="100"
     />
   </div>
   <div>
@@ -60,5 +66,6 @@
 <pre>
   Proyecto {{ miFormulario.value | json }}
   Valido {{ miFormulario.valid }}
-  Valido {{ miFormulario.errors | json }}
+  Errores {{ miFormulario.errors | json }}
+  Errores {{ miFormulario.controls["horas"]?.errors | json }}
 </pre>
