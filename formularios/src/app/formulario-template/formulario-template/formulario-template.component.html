@@ -16,6 +16,14 @@
       name="proyecto"
       required=""
     />
+    <div
+      *ngIf="miFormulario.invalid && miFormulario.touched"
+      class="alert alert-danger d-flex align-items-center"
+      role="alert"
+    >
+      <i class="bi bi-shield-x"></i>
+      <div>Error: Formulario invalido</div>
+    </div>
   </div>
   <div>
     <label for="Horas">Horas</label>
