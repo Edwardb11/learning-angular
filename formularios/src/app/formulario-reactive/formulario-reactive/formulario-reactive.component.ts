@@ -48,6 +48,8 @@ export class FormularioReactiveComponent implements OnInit {
       return;
     }
     // agregar las tecnologias
-    // this.tecnologias.push;
+    this.tecnologias.push(this.fb.control(this.tecnologia.value));
+    console.log(this.tecnologia.value);
+    this.tecnologia.reset();
   }
 }

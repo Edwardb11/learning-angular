@@ -58,7 +58,10 @@
       </div>
       <div class="col-12 my-2">
         <ul class="list-group list-group-horizontal">
-          <li *ngFor="let tecnologia of []" class="list-group-item">
+          <li
+            *ngFor="let tecnologia of tecnologias.value"
+            class="list-group-item"
+          >
             {{ tecnologia }}
           </li>
         </ul>
