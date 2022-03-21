@@ -18,4 +18,7 @@ export class tareasServices {
     )!;
     tarea.completada = !tarea.completada;
   }
+  agregarTarea(task, completada) {
+    this.tareas.push(task, completada);
+  }
 }

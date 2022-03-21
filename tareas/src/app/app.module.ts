@@ -8,6 +8,7 @@ import { TareasModule } from './tareas/tareas.module';
   declarations: [AppComponent],
   imports: [BrowserModule, TareasModule],
   providers: [],
+
   bootstrap: [AppComponent],
 })
 export class AppModule {}
