@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {
+  FormArray,
   FormBuilder,
   FormControl,
   FormGroup,
@@ -22,17 +23,31 @@ export class FormularioReactiveComponent implements OnInit {
       Validators.min(1),
       Validators.max(50),
     ]),
-    tecnologias: new FormControl(''),
+    tecnologias: this.fb.array([]),
   });
   tecnologia: FormControl = this.fb.control('', [
     Validators.required,
     Validators.minLength(3),
     Validators.maxLength(25),
   ]);
+
+  // obtener el arreglo  que tiene las validaciones d tecnologias
+  get tecnologias() {
+    return this.MiFormulario.get('tecnologias') as FormArray;
+  }
   constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {}
   validar() {
     return this.MiFormulario.invalid && this.MiFormulario.touched;
+  }
+  agregarTecnologia() {
+    // validar las tecnologias
+    if (this.tecnologia.invalid) {
+      this.MiFormulario.markAllAsTouched();
+      return;
+    }
+    // agregar las tecnologias
+    // this.tecnologias.push;
   }
 }
