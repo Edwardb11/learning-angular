@@ -8,7 +8,7 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 })
 export class FormularioReactiveComponent implements OnInit {
   MiFormulario: FormGroup = this.fb.group({
-    proyecto: new FormControl(''),
+    proyecto: this.fb.control('Estado inicial'),
     horas: new FormControl(0),
     tecnologias: new FormControl(''),
   });
