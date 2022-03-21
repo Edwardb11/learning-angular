@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-formulario-reactive',
@@ -7,12 +7,12 @@ import { FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./formulario-reactive.component.css'],
 })
 export class FormularioReactiveComponent implements OnInit {
-  MiFormulario: FormGroup = new FormGroup({
+  MiFormulario: FormGroup = this.fb.group({
     proyecto: new FormControl(''),
     horas: new FormControl(0),
     tecnologias: new FormControl(''),
   });
-  constructor() {}
+  constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {}
 }
