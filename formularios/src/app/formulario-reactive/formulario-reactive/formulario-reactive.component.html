@@ -2,6 +2,7 @@
   [formGroup]="MiFormulario"
   class="form-group container"
   autocomplete="off"
+  (ngSubmit)="agregarProyectos()"
 >
   <div
     *ngIf="validar()"
@@ -85,11 +86,11 @@
       </tr>
     </thead>
     <tbody>
-      <!-- <tr *ngFor="let proyecto of proyectos">
+      <tr *ngFor="let proyecto of proyectos">
         <td>{{ proyecto.proyecto }}</td>
         <td>{{ proyecto.horas }}</td>
         <td>{{ proyecto.tecnologias }}</td>
-      </tr> -->
+      </tr>
     </tbody>
   </table>
 </div>

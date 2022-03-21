@@ -31,6 +31,7 @@ export class FormularioReactiveComponent implements OnInit {
     Validators.maxLength(25),
   ]);
 
+  proyectos: any[] = [];
   // obtener el arreglo  que tiene las validaciones d tecnologias
   get tecnologias() {
     return this.MiFormulario.get('tecnologias') as FormArray;
@@ -51,5 +52,15 @@ export class FormularioReactiveComponent implements OnInit {
     this.tecnologias.push(this.fb.control(this.tecnologia.value));
     console.log(this.tecnologia.value);
     this.tecnologia.reset();
+  }
+  agregarProyectos() {
+    if (this.MiFormulario.invalid) {
+      this.MiFormulario.markAllAsTouched();
+      return;
+    }
+    this.proyectos.push(this.MiFormulario.value);
+    console.log(this.MiFormulario.value);
+    this.MiFormulario.reset();
+    this.tecnologias.clear();
   }
 }
