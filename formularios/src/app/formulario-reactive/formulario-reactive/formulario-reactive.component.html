@@ -3,6 +3,11 @@
   class="form-group container"
   autocomplete="off"
 >
+  <div class="alert alert-danger d-flex align-items-center" role="alert">
+    <i class="bi bi-shield-x"></i>
+    <div>Error: Formulario invalido</div>
+  </div>
+  <pre>{{ MiFormulario.invalid }}</pre>
   <div>
     <label for="proyectoR">Proyecto</label>
     <input

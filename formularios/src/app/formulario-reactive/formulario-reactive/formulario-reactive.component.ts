@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-formulario-reactive',
@@ -8,8 +13,15 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 })
 export class FormularioReactiveComponent implements OnInit {
   MiFormulario: FormGroup = this.fb.group({
-    proyecto: this.fb.control('Estado inicial'),
-    horas: new FormControl(0),
+    proyecto: this.fb.control('', [
+      Validators.required,
+      Validators.minLength(3),
+    ]),
+    horas: new FormControl(0, [
+      Validators.required,
+      Validators.min(1),
+      Validators.max(50),
+    ]),
     tecnologias: new FormControl(''),
   });
   constructor(private fb: FormBuilder) {}
