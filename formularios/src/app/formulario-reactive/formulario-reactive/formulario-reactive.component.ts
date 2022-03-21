@@ -17,7 +17,7 @@ export class FormularioReactiveComponent implements OnInit {
       Validators.required,
       Validators.minLength(3),
     ]),
-    horas: new FormControl(0, [
+    horas: new FormControl(1, [
       Validators.required,
       Validators.min(1),
       Validators.max(50),
@@ -27,4 +27,7 @@ export class FormularioReactiveComponent implements OnInit {
   constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {}
+  validar() {
+    return this.MiFormulario.invalid && this.MiFormulario.touched;
+  }
 }
