@@ -24,6 +24,11 @@ export class FormularioReactiveComponent implements OnInit {
     ]),
     tecnologias: new FormControl(''),
   });
+  tecnologia: FormControl = this.fb.control('', [
+    Validators.required,
+    Validators.minLength(3),
+    Validators.maxLength(25),
+  ]);
   constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {}
