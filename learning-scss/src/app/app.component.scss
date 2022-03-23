@@ -1,5 +1,22 @@
 // Variables
-$primary: red;
+@import "../scss/config";
 .btn {
   background-color: $primary;
+  color: $secondary;
+
+  // Creando otra clase
+  &.btn-dark {
+    background-color: $dark;
+    &:hover {
+      background-color: lighten($color: $dark, $amount: 10);
+    }
+    &:active {
+      background-color: darken($color: $dark, $amount: 5);
+    }
+  }
+  &:hover {
+    cursor: pointer;
+    background-color: aqua;
+    color: black;
+  }
 }
