@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormGroup, FormControl } from '@angular/forms';
 import { tareasServices } from './../services/tarea.service';
-import { Tarea } from './../interface/tarea.interface';
 
 @Component({
   selector: 'app-forms',
@@ -9,23 +8,20 @@ import { Tarea } from './../interface/tarea.interface';
   styleUrls: ['./forms.component.css'],
 })
 export class FormsComponent implements OnInit {
-  @ViewChild('miFormulario')
-  miFormulario!: NgForm;
-  initialState = {
-    actividad: '',
-    completada: false,
-  };
   constructor(private tareasServices: tareasServices) {}
+
+  form = new FormGroup({
+    actividad: new FormControl(''),
+    completada: new FormControl(false),
+  });
   ngOnInit(): void {}
   agregar() {
-    if (this.miFormulario.invalid) {
-      return;
-    }
-
-    this.tareasServices.agregarTarea(
-      this.miFormulario.controls['actividad'].value,
-      false
-    );
-    console.log(this.miFormulario.value);
+    if (this.form.invalid) return;
+    console.warn(this.form.value);
+    const task = this.form.value;
+    this.tareasServices.agregarTarea({
+      tarea: this.form.controls['actividad'].value,
+      completada: false,
+    });
   }
 }

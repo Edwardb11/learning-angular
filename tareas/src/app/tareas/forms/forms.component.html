@@ -1,13 +1,13 @@
-<form autocomplete="off" (ngSubmit)="agregar()" #miFormulario="ngForm">
+<form [formGroup]="form" autocomplete="off" (ngSubmit)="agregar()">
   <div class="field">
     <label class="label">Actividad</label>
     <div class="control">
       <input
         class="input"
         type="text"
-        [(ngModel)]="initialState.actividad"
         placeholder="Ingrese la actividad"
         name="actividad"
+        formControlName="actividad"
         required
       />
     </div>

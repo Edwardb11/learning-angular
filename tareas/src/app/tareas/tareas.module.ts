@@ -6,6 +6,7 @@ import { GridComponent } from './grid/grid.component';
 import { tareasServices } from './services/tarea.service';
 import { FormsComponent } from './forms/forms.component';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,7 @@ import { FormsModule } from '@angular/forms';
     GridComponent,
     FormsComponent,
   ],
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule],
   exports: [GridComponent],
   providers: [tareasServices],
 })

@@ -18,7 +18,8 @@ export class tareasServices {
     )!;
     tarea.completada = !tarea.completada;
   }
-  agregarTarea(task, completada) {
-    this.tareas.push(task, completada);
+  agregarTarea(task) {
+    // this.tareas.push({ tarea: 'Barrer', completada: false });
+    this.tareas.push(task);
   }
 }
