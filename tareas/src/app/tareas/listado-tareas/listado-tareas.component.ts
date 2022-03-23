@@ -13,9 +13,9 @@ export class ListadoTareasComponent {
     return this.tareasServices.tareas;
   }
   delete(Tarea: Tarea) {
-    this.tareasServices.deleteTarea(Tarea.tarea);
+    this.tareasServices.deleteTarea(Tarea.id);
   }
   complete(tarea: Tarea) {
-    this.tareasServices.completaTarea(tarea.tarea);
+    this.tareasServices.completaTarea(tarea.id);
   }
 }

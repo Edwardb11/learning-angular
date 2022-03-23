@@ -12,14 +12,16 @@ export class FormsComponent implements OnInit {
 
   form = new FormGroup({
     actividad: new FormControl(''),
-    completada: new FormControl(false),
   });
   ngOnInit(): void {}
+  get tareaID() {
+    return this.tareasServices.tareas;
+  }
   agregar() {
     if (this.form.invalid) return;
-    console.warn(this.form.value);
-    const task = this.form.value;
+
     this.tareasServices.agregarTarea({
+      id: this.tareaID.length + 1,
       tarea: this.form.controls['actividad'].value,
       completada: false,
     });

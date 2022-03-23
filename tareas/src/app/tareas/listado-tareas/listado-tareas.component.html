@@ -10,8 +10,8 @@
   </thead>
 
   <tbody>
-    <tr *ngFor="let tarea of tareas; index as i">
-      <th>{{ i + 1 }}</th>
+    <tr *ngFor="let tarea of tareas">
+      <th>{{ tarea.id }}</th>
       <td>
         <b [ngClass]="tarea.completada ? 'is-underlined' : ''">{{
           tarea.tarea
