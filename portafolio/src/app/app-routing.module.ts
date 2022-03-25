@@ -7,6 +7,10 @@ const routes: Routes = [
     loadChildren: () =>
       import('./proyectos/proyectos.module').then((m) => m.ProyectosModule),
   },
+  {
+    path: '**',
+    redirectTo: 'proyectos',
+  },
 ];
 
 @NgModule({
