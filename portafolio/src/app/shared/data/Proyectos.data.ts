@@ -1,21 +1,22 @@
 export const proyectos: any[] = [
   {
     nombre: 'Pokeapp',
-    img: '',
+    img: '../../../assets/Formularios.png',
     tecnologias: ['Angular Framework'],
     descripcion: '',
     url: 'https://forms-q20j25a75-edwardb11.vercel.app/',
   },
   {
     nombre: 'CRUD',
-    img: '',
+    img: '../../../assets/crud.png',
+
     tecnologias: ['Angular Framework'],
     descripcion: '',
     url: 'https://crud-6xqyued3h-edwardb11.vercel.app/',
   },
   {
     nombre: 'Listado de Tareas',
-    img: '',
+    img: '../../../assets/tareas.png',
     tecnologias: ['Angular Framework', 'Bulma CSS'],
     descripcion:
       'Aplicacion de listado de tareas usando Bulma CSS como Framework para los estilos',
