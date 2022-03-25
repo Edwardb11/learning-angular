@@ -1,6 +1,6 @@
 export const proyectos: any[] = [
   {
-    nombre: 'Pokeapp',
+    nombre: 'Formularios',
     img: '../../../assets/Formularios.png',
     tecnologias: ['Angular Framework'],
     descripcion: '',

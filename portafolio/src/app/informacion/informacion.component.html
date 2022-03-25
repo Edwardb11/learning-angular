@@ -1,1 +1,28 @@
-<p>informacion works! {{ parametro }}</p>
+<div class="row">
+  <div class="col-12 col-md-4">
+    <img
+      [src]="proyectoData.img"
+      class="img-thumbnail rounded"
+      [alt]="proyectoData.nombre"
+    />
+    <h2>{{ proyectoData.nombre }}</h2>
+    <a [href]="proyectoData.url" class="btn btn-warning w-100">
+      Visitar aplicacion</a
+    >
+  </div>
+  <div class="col-12 col-md-8">
+    <h2>Descripcion</h2>
+    <hr />
+    <p>{{ proyectoData.tecnologia }}</p>
+    <h2>Tecnologias</h2>
+    <hr />
+    <div class="list-group">
+      <span
+        *ngFor="let tecnologia of proyectoData.tecnologias"
+        class="list-group-item list-group-item-action"
+        >{{ tecnologia }}</span
+      >
+    </div>
+    <button class="btn btn-info w-100 my-3">Volver a proyectos</button>
+  </div>
+</div>
