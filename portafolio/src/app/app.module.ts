@@ -4,10 +4,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/components/shared.module';
-import { NavbarComponent } from './shared/components/navbar/navbar.component';
+import { InformacionComponent } from './informacion/informacion.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, InformacionComponent],
   imports: [BrowserModule, AppRoutingModule, SharedModule],
   providers: [],
   bootstrap: [AppComponent],

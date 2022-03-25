@@ -10,8 +10,11 @@
           >
         </div>
         <div class="mt-2">
-          <a [href]="proyecto.url" class="btn btn-success w-100">
-            Visitar aplicacion</a
+          <a
+            [routerLink]="'informacion/' + getURL(proyecto.nombre)"
+            class="btn btn-success w-100"
+          >
+            Ver detalles</a
           >
         </div>
       </div>
