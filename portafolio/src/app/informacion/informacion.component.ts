@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ProyectoDataService } from './../proyectos/service/proyecto-data.service';
 
 @Component({
@@ -15,6 +15,7 @@ export class InformacionComponent implements OnInit {
   proyectoData: any = {};
   constructor(
     private activatedRoute: ActivatedRoute,
+    private router: Router,
     private proyectoDataService: ProyectoDataService
   ) {
     let id = '';
@@ -26,5 +27,8 @@ export class InformacionComponent implements OnInit {
 
   ngOnInit(): void {
     this.proyectoData = this.proyectoDataService.getProyecto(this.parametro);
+  }
+  goProyectos() {
+    this.router.navigate(['/proyectos']);
   }
 }
